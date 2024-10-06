@@ -23,6 +23,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 5px;
 }
 
 .quantity-button {
@@ -61,6 +62,11 @@
 
 .calorie-cont {
   width: 200px;
+  color: rgb(239, 140, 11);
+  font-weight: 800;
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .image-cont {

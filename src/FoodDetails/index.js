@@ -1,7 +1,7 @@
 import './index.css'
 
 const FoodDetails = props => {
-  const {details} = props
+  const {details, addItem, removeItem, cartItems} = props
 
   const {
     addOnCat,
@@ -13,6 +13,7 @@ const FoodDetails = props => {
     dishName,
     dishPrice,
     dishCalories,
+    dishId,
   } = details
 
   const foodType =
@@ -30,6 +31,19 @@ const FoodDetails = props => {
       />
     )
 
+  const DecreaseCount = () => {
+    removeItem(details)
+  }
+
+  const increaseCount = () => {
+    addItem(details)
+  }
+
+  const getQuantity = () => {
+    const cartItem = cartItems.find(item => item.dishId === dishId)
+    return cartItem ? cartItem.quantity : 0
+  }
+
   return (
     <li className="list-item">
       <div className="dish">
@@ -43,11 +57,19 @@ const FoodDetails = props => {
           <p>{dishDescription}</p>
           {dishAvailability === true ? (
             <div className="quantity-button">
-              <button type="button" className="quan-button">
+              <button
+                type="button"
+                className="quan-button"
+                onClick={DecreaseCount}
+              >
                 -
               </button>
-              <p>0</p>
-              <button type="button" className="quan-button">
+              <p>{getQuantity()}</p>
+              <button
+                type="button"
+                className="quan-button"
+                onClick={increaseCount}
+              >
                 +
               </button>
             </div>
@@ -62,7 +84,7 @@ const FoodDetails = props => {
         </div>
       </div>
       <div className="calorie-cont">
-        <p>{dishCalories}calories</p>
+        <p>{dishCalories} calories</p>
       </div>
       <div className="image-cont">
         <img src={dishImage} alt="" className="dish-image" />
