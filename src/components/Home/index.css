@@ -7,6 +7,8 @@
 .tab-container {
   overflow-y: auto;
   box-shadow: 0px 10px 10px -15px #111;
+  display: flex;
+  overflow: auto;
   /* -ms-overflow-style: none;
   scrollbar-width: none;*/
 }
@@ -19,11 +21,17 @@
   flex-shrink: 0;
   flex-grow: 1;
   padding: 15px 0px;
-  text-align: center;
   cursor: pointer;
+  text-align: center;
+  width: 200px;
 }
 
 .active-tab-item {
+  font-family: 'Roboto';
+  font-size: 18px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
   color: #ff6347;
   border-bottom: 2px solid #ff6347;
   font-weight: 600;

@@ -1,5 +1,4 @@
 import {useState, useEffect} from 'react'
-import 'bootstrap/dist/css/bootstrap.css'
 import Header from '../Header'
 import DishItem from '../DishItem'
 
@@ -96,10 +95,7 @@ const Home = () => {
           key={eachCategory.menuCategoryId}
           onClick={onClickHandler}
         >
-          <button
-            type="button"
-            className="mt-0 mb-0 ms-2 me-2 tab-category-button"
-          >
+          <button type="button" className="tab-category-button">
             {eachCategory.menuCategory}
           </button>
         </li>
@@ -112,7 +108,7 @@ const Home = () => {
     )
 
     return (
-      <ul className="m-0 d-flex flex-column dishes-list-container">
+      <ul className="dishes-list-container">
         {categoryDishes.map(eachDish => (
           <DishItem
             key={eachDish.dishId}

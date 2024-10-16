@@ -1,5 +1,9 @@
 .nav-header {
   box-shadow: 0px 10px 10px -15px #111;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .logo-heading {
@@ -7,6 +11,11 @@
   font-weight: 600;
   font-size: 35px;
   cursor: pointer;
+}
+
+.cart-image {
+  height: 35px;
+  width: 35px;
 }
 
 @media screen and (max-width: 576px) {
@@ -24,12 +33,14 @@
 
 .cart-icon-container {
   position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+
 }
 
 .cart-count-badge {
   position: absolute;
-  top: -15px;
-  right: -5px;
 }
 
 .cart-count {
@@ -42,4 +53,9 @@
   font-size: 14px;
   min-width: 25px;
   border-radius: 50%;
+}
+
+.cart-container {
+  display: flex;
+  align-items: center;
 }
