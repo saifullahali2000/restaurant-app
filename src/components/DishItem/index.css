@@ -61,7 +61,7 @@
 
 .controller-container {
   width: fit-content;
-  min-width: 150px;
+  min-width: 120px;
   justify-content: space-between;
   padding: 10px;
   border-radius: 50px;
@@ -91,6 +91,7 @@
   font-weight: 500;
   font-size: 18px;
   margin: 5px 0;
+  color: red;
 }
 
 .addon-availability-text {
@@ -134,4 +135,14 @@
     width: 100px;
     height: 100px;
   }
+}
+
+.add-to-cart-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 17px;
+  border-radius: 25px;
+  margin-top: 15px;
+  margin-bottom: 10px;
 }

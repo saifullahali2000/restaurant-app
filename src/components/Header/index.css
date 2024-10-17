@@ -13,9 +13,15 @@
   cursor: pointer;
 }
 
+.nav-link {
+  text-decoration: none;
+  color: black;
+}
+
 .cart-image {
   height: 35px;
   width: 35px;
+  margin-left: 15px;
 }
 
 @media screen and (max-width: 576px) {

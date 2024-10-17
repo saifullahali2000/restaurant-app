@@ -1,6 +1,8 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import Header from '../Header'
 import DishItem from '../DishItem'
+
+import CartContext from '../../context/CartContext'
 
 import './index.css'
 
@@ -9,10 +11,10 @@ const Home = () => {
   const [response, setResponse] = useState([])
   const [activeCategoryId, setActiveCategoryId] = useState('')
 
-  const [cartItems, setCartItems] = useState([])
+  const {cartList} = useContext(CartContext)
 
-  const addItemToCart = dish => {
-    const isAlreadyExists = cartItems.find(item => item.dishId === dish.dishId)
+  const addItemToCart = /* dish */ () => {
+    /* const isAlreadyExists = cartList.find(item => item.dishId === dish.dishId)
     if (!isAlreadyExists) {
       const newDish = {...dish, quantity: 1}
       setCartItems(prev => [...prev, newDish])
@@ -24,11 +26,11 @@ const Home = () => {
             : item,
         ),
       )
-    }
+    } */
   }
 
-  const removeItemFromCart = dish => {
-    const isAlreadyExists = cartItems.find(item => item.dishId === dish.dishId)
+  const removeItemFromCart = /* dish */ () => {
+    /* const isAlreadyExists = cartList.find(item => item.dishId === dish.dishId)
     if (isAlreadyExists) {
       setCartItems(prev =>
         prev
@@ -39,7 +41,7 @@ const Home = () => {
           )
           .filter(item => item.quantity > 0),
       )
-    }
+    } */
   }
 
   const getUpdatedData = tableMenuList =>
@@ -113,7 +115,6 @@ const Home = () => {
           <DishItem
             key={eachDish.dishId}
             dishDetails={eachDish}
-            cartItems={cartItems}
             addItemToCart={addItemToCart}
             removeItemFromCart={removeItemFromCart}
           />
@@ -132,8 +133,8 @@ const Home = () => {
     renderSpinner()
   ) : (
     <div className="home-background">
-      <Header cartItems={cartItems} />
-      <ul className="m-0 ps-0 d-flex tab-container">{renderTabMenuList()}</ul>
+      <Header cartItems={cartList} />
+      <ul className="tab-container">{renderTabMenuList()}</ul>
       {renderDishes()}
     </div>
   )
