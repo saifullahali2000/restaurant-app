@@ -11,7 +11,7 @@ import CartContext from '../../context/CartContext'
 import './index.css'
 
 const Header = props => {
-  const {cartList} = useContext(CartContext)
+  const {cartList, restaurantName} = useContext(CartContext)
 
   const renderCartIcon = () => (
     <Link to="/cart" className="nav-link">
@@ -31,7 +31,7 @@ const Header = props => {
   return (
     <header className="nav-header">
       <Link to="/" className="nav-link">
-        <h1 className="logo-heading">UNI Resto Cafe</h1>
+        <h1 className="logo-heading">{restaurantName}</h1>
       </Link>
       <div className="cart-container">
         <p className="my-orders-text">My Orders</p>
