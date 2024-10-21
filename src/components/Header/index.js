@@ -15,10 +15,10 @@ const Header = props => {
 
   const renderCartIcon = () => (
     <Link to="/cart" className="nav-link">
-      <div className="cart-icon-container">
+      <button data-testid="cart" className="cart-icon-container" type="button">
         <FaShoppingCart className="cart-image" />
         <p className="cart-count">{cartList.length}</p>
-      </div>
+      </button>
     </Link>
   )
 
